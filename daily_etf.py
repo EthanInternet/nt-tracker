@@ -70,7 +70,7 @@ def fetch_all(pro, days):
     frames = []
     for code, name in NT_ETFS.items():
         print(f"↓ {name}({code})")
-        d = fetch_one(pro, code,名=name, days=days)
+        d = fetch_one(pro, code,name=name, days=days)
         if not d.empty:
             frames.append(d)
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()

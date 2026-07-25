@@ -2,3 +2,4 @@ akshare
 pandas
 matplotlib
 requests
+tushare

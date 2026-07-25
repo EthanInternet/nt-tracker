@@ -1,0 +1,21 @@
+name: Backfill ETF History
+on:
+  workflow_dispatch:
+permissions:
+  contents: write   # 允许 push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install pandas requests
+      - run: python backfill_fast.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: EndBug/add-and-commit@v9
+        with:
+          author_name: nt-bot
+          message: "backfill: etf history"
+          add: "nt_etf_shares.csv"

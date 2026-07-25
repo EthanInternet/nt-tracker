@@ -101,7 +101,7 @@ def fetch_akshare(code6, name, days):
         if pd.isna(s):
             return pd.DataFrame()
         out = pd.DataFrame([{
-            "date": TODAY, "code": code6, "name":、name, "shares": float(s)
+            "date": TODAY, "code": code6, "name":name, "shares": float(s)
         }])
         print(f"  ✅(akshare) {name}：{TODAY:%Y-%m-%d} {s:,.0f} 份")
         return out[["date", "code", "name", "shares"]]

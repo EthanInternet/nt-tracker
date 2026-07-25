@@ -2,7 +2,7 @@ name: NT Daily Push
 
 on:
   schedule:
-    - cron: '6 12 * * *'   # UTC 11:30 = 北京 19:30，工作日
+    - cron: '28 12 * * *'   # UTC 11:30 = 北京 19:30，工作日
   workflow_dispatch:
 
 jobs:

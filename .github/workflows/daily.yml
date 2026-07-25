@@ -14,9 +14,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: |
-          echo "WEBHOOK_LEN=$(printf '%s' "$WECOM_WEBHOOK" | wc -c)"
-          python daily_etf.py
+      - run: python daily_etf.py
         env:
           WECOM_WEBHOOK: ${{ secrets.WECOM_WEBHOOK }}
       - uses: EndBug/add-and-commit@v9
